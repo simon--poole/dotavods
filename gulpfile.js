@@ -9,7 +9,7 @@ var rename = require('gulp-rename');
 var cssbeautify = require('gulp-cssbeautify');
 
 //Default task - watches
-gulp.task('default', ['watch']);
+gulp.task('default', ['build']);
 
 //Build umbrella task
 gulp.task('build', ['minify-css']);
@@ -34,9 +34,4 @@ gulp.task('minify-css', ['less-build'], function(){
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest('dist/'));
-});
-
-//Watcher task, monitors angular/node code to restart app and redeploy
-gulp.task('watch', function() {
-    gulp.watch('src/**/*', ['build']);
 });
