@@ -13,11 +13,13 @@ To download the respository, simply clone the repository.
 
 To set up your environment to make changes or build the source from scratch, you'll need to install `Gulp` and a few prerequisites.
 This can be done quickly using
+
 	npm install --dev
 
 ## Building the source
 Building the sourcce is extremely simple - simply run
+
 	gulp build
 	
-The resulting css files can be found in dist/
+The resulting css files can be found in **dist/**.
 
