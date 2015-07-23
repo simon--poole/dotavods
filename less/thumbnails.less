@@ -2,12 +2,13 @@
 @thumb-height: -70px;
 
 .self .thumbnail {
-  background: url(%%thumbnails%%) no-repeat 0 -210px;
+  //background: url(%%thumbnails%%) no-repeat 0 -210px;
   width: -@thumb-width;
   height: -@thumb-height;
   padding: 0;
+  background: url(%%thumb-default%%) no-repeat;
 }
-.thing .thumbnail {
+/*.thing .thumbnail {
   &[href*="s3_china"],
   &[href*="s3_korea"],
   &[href*="s3_sea"],
@@ -52,3 +53,4 @@
   &[href*="poro_king"]             { .bg-pos(@thumb-width * 4, @thumb-height * 5); }
   &[href*="alphadraft"]             { .bg-pos(@thumb-width * 5, @thumb-height * 0); }           
 }
+*/
