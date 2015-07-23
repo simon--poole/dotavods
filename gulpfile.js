@@ -20,14 +20,14 @@ gulp.task('clean', function(){
 });
 
 gulp.task('less-build', ['clean'], function() {
-    return gulp.src('less/dotavods.less')
-        .pipe(less())
+    	return gulp.src('less/dotavods.less')
+	        .pipe(less())
 		.pipe(cssbeautify({
-            indent: '	',
-            openbrace: 'separate-line',
-            autosemicolon: true
-        }))
-        .pipe(gulp.dest('dist/'));
+	            indent: '	',
+	            openbrace: 'separate-line',
+	            autosemicolon: true
+	        }))
+	        .pipe(gulp.dest('dist/'));
 });
 gulp.task('minify-css', ['less-build'], function(){
 	return gulp.src('dist/dotavods.css')
