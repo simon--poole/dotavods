@@ -31,16 +31,21 @@
   border: none;
 }
 #header-bottom-left {
-  background: #02021a url(%%header-background%%) no-repeat right top;
+  background: #02021a url(%%header-background%%) no-repeat left top;
   height: 126px;
+  line-height: 126px;
   span.pagename a {
     display: block;
-    height: 125px;
-    width: 228px;
+    height: 100px;
+    width: 458px;
     margin-left: 10px;
-    margin-top: 10px;
+	margin-top: 13px;
     background: url(%%logo%%) no-repeat scroll 0 0 transparent;
     font-size: 0!important;
+	overflow: hidden;
+	&:hover {
+		background-position: 0px -100px;
+	}
   }
 }
 .redditname a {
@@ -103,68 +108,30 @@
 }
 
 /* Tournament icons in header */
-@header-icons-height: -150px;
+@header-icons-height: -130px;
 .side {
   // In order, header icons for the following tourneys, left to right
-  // IEM, EU LCS, OGN/LCK, LPL, NA LCS
-  a[href="/r/dotavods/comments/2ywjmx/"],
-  a[href="/r/dotavods/comments/3cp9zu/"],
-  a[href="/r/dotavods/comments/3bqjgw/"],
-  a[href="/r/dotavods/comments/3byhni/"],
-  a[href="/r/dotavods/comments/3cxq5u/"] {
+  a[href="/r/dvbets/comments/3eaiax"],
+  {
     .hide-text;
     background: url(%%header-events%%) no-repeat top left;
-    height: 125px;
+    height: 126px;
     display: block;
     position: absolute;
     top: 19px;
     z-index: 9999;
+	overflow: hidden;
   }
-  // IEM
-  a[href="/r/dotavods/comments/2ywjmx/"] {
-    right: 670px;
-    width: 250px;
+  // Icon 1
+  a[href="/r/dvbets/comments/3eaiax"] {
+    right: 15px;
+    width: 300px;
     .bg-pos;
     &:hover {
       .bg-pos(0, @header-icons-height);
     }
   }
-  // EU LCS
-  a[href="/r/dotavods/comments/3cp9zu/"] {
-    right: 520px;
-    width: 140px;
-    .bg-pos(-250px, 0);
-    &:hover {
-      .bg-pos(-250px, @header-icons-height);
-    }
-  }
-  // OGN/LCK
-  a[href="/r/dotavods/comments/3bqjgw/"] {
-    right: 320px;
-    width: 200px;
-    .bg-pos(-380px, 0);
-    &:hover {
-      .bg-pos(-380px, @header-icons-height);
-    }
-  }
-  // LPL
-  a[href="/r/dotavods/comments/3byhni/"] {
-    right: 175px;
-    width: 130px;
-    .bg-pos(-580px, 0);
-    &:hover {
-      .bg-pos(-580px, @header-icons-height);
-    }
-  }
-  // NA LCS
-  a[href="/r/dotavods/comments/3cxq5u/"] {
-    right: 0;
-    width: 140px;
-    .bg-pos(-710px, 0);
-    &:hover {
-      .bg-pos(-710px, @header-icons-height);
-    }
-  }
+  
 }
 
 /* Top announcement.
@@ -177,8 +144,8 @@
   top: 145px;
   left: 0;
   right: 0;
-  padding: 4px 13px 4px 4px;
-	margin-top: 0px;
+  padding: 4px 13px 4px 13px;
+  margin-top: 0px;
   margin-left: 35px;
   display: block;
   background: url(%%gray%%);
