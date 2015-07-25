@@ -7,6 +7,9 @@ var less = require('gulp-less');
 var cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 var cssbeautify = require('gulp-cssbeautify');
+var gulpif = require('gulp-if');
+var sprity = require('sprity');
+var sprityless = require('sprity-less');
 
 //Default task - watches
 gulp.task('default', ['build']);
@@ -17,6 +20,17 @@ gulp.task('build', ['minify-css']);
 gulp.task('clean', function(){
 	return gulp.src('dist/')
         .pipe(clean());
+});
+
+gulp.task('sprites', function (cb) {
+  return sprity.src({
+    src: './teams/*.png',
+    style: './less/team-sprites.less',
+    name: 'teams',
+    processor: 'less',
+	margin: 0,
+  })
+  .pipe(gulpif('*.png', gulp.dest('./images/'), gulp.dest('./less/')))
 });
 
 gulp.task('less-build', ['clean'], function() {
