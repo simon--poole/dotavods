@@ -6,6 +6,7 @@
 # Except PNGs in images
 !images/*.png
 !images/*.jpg
+!teams/*.png
 
 # Ignore generated sprites directory
 ./visual-resources/generated-sprites

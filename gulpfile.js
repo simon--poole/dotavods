@@ -1,5 +1,6 @@
 //Include gulp
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 
 //Include plugins
 var clean = require('gulp-clean');
@@ -30,6 +31,7 @@ gulp.task('sprites', function (cb) {
     processor: 'less',
 	margin: 0,
   })
+   .on('error', gutil.log)
   .pipe(gulpif('*.png', gulp.dest('./images/'), gulp.dest('./less/')))
 });
 
