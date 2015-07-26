@@ -16,41 +16,6 @@
     margin-top: 10px;
   }
   
-  // Theme Switcher
-  a[href="//www.reddit.com/r/dotavods/"],
-  a[href="#2themes"],
-  a[href="//dd.reddit.com/r/dotavods/"] {
-    margin: 10px 0 0 0;
-    height: 50px;
-    display: inline-block;
-    background: url(%%theme-selector%%) no-repeat;
-  }
-  a[href="//www.reddit.com/r/dotavods/"] {
-    width: 75px;
-    margin-left: 20px;
-    &:hover {
-      background-position: 0px -50px;
-    }
-  }
-  a[href="#2themes"] {
-    margin-left: -5px;
-    width: 130px;
-    background-position: -85px 0px;
-    cursor: default;
-    &:after {
-      content: none!important;
-    }
-  }
-  a[href="//dd.reddit.com/r/dotavods/"] {
-    margin-left: -5px;
-    margin-right: -20px;
-    width: 75px;
-    background-position: -213px 0px;
-    &:hover {
-      background-position: -213px -50px;
-    }
-  }
-  
   /* sidebar social media icons */
   @social-height: -49px;
   
@@ -103,6 +68,10 @@
 
 /* Table in sidebar */
 .side {
+  .md > p:first-of-type {
+	width: 325px;
+    margin: 5px 10px 10px -10px;
+  }
   .md table {
     width: 325px;
     margin: -5px 10px 10px -10px;
