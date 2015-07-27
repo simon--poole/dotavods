@@ -14,10 +14,19 @@ To download the respository, simply clone the repository.
 To set up your environment to make changes or build the source from scratch, you'll need to install `Gulp` and a few prerequisites.
 This can be done quickly using
 
-	npm install --dev
+	npm install
+
+## Generating sprites
+	
+You can quickly regenerate sprites files using 
+	
+	gulp sprites
+
+This updates the `images/teams.png` file and the `less/team-sprites.less` file.
+You'll also need to update the `teams.less` file to include any additional sprites.
 
 ## Building the source
-Building the sourcce is extremely simple - simply run
+Building the source is extremely simple - simply run
 
 	gulp build
 	
