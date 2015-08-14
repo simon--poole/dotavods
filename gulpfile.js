@@ -1,6 +1,5 @@
 //Include gulp
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 
 //Include plugins
 var clean = require('gulp-clean');
@@ -11,6 +10,8 @@ var cssbeautify = require('gulp-cssbeautify');
 var gulpif = require('gulp-if');
 var sprity = require('sprity');
 var sprityless = require('sprity-less');
+var lwip = require('gulp-lwip');
+var gutil = require('gulp-util');
 
 //Default task - watches
 gulp.task('default', ['build']);
@@ -23,9 +24,22 @@ gulp.task('clean', function(){
         .pipe(clean());
 });
 
-gulp.task('sprites', function (cb) {
+gulp.task('clean-team-icons', function(){
+	return gulp.src('./teams/dist')
+        .pipe(clean());
+});
+gulp.task('resize-team-icons', ['clean-team-icons'], function(){
+	return gulp.src(["./teams/**/*.png", "!./teams/dist/*.png"])
+		.pipe(lwip
+			.resize(48, 20)
+			.exportAs("png")
+		)
+		.pipe(gulp.dest("./teams/dist"));
+});
+
+gulp.task('generate-team-icons', ['resize-team-icons'], function () {
   return sprity.src({
-    src: './teams/*.png',
+    src: './teams/dist/**/*.png',
     style: './less/team-sprites.less',
     name: 'teams',
     processor: 'less',
@@ -34,6 +48,20 @@ gulp.task('sprites', function (cb) {
    .on('error', gutil.log)
   .pipe(gulpif('*.png', gulp.dest('./images/'), gulp.dest('./less/')))
 });
+
+gulp.task('generate-thumbnails',function () {
+  return sprity.src({
+    src: './thumbs/**',
+    style: './less/thumb-sprites.less',
+    name: 'thumbnails',
+    processor: 'less',
+	margin: 0,
+  })
+   .on('error', gutil.log)
+  .pipe(gulpif('*.png', gulp.dest('./images/'), gulp.dest('./less/')))
+});
+
+gulp.task('sprites', ['generate-team-icons', 'generate-thumbnails']);
 
 gulp.task('less-build', ['clean'], function() {
     	return gulp.src('less/dotavods.less')

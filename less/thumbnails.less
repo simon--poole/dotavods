@@ -1,9 +1,28 @@
-@thumb-width: -100px;
-@thumb-height: -70px;
+@import (reference) "thumb-sprites.less";
 
 .self .thumbnail {
-  width: -@thumb-width;
-  height: -@thumb-height;
+  width: 100px;
+  height: 70px;
   padding: 0;
-  background: url(%%thumb-default%%) no-repeat;
+  background: url(%%thumbnails%%) no-repeat;
+  .sprite-position(@dv);
+}
+
+.self .thumbnail[href*="summit_3"]{
+	.sprite-position(@summit)!important;
+}
+.self .thumbnail[href*="international_5"]{
+ 	.sprite-position(@ti5)!important;
+}
+.self .thumbnail[href*="esl_one"]{
+	.sprite-position(@esl-one)!important;
+}
+.self .thumbnail[href*="dota_2_asia_championships"]{
+	.sprite-position(@dac)!important;
+}
+.self .thumbnail[href*="nxtgame"]{
+	.sprite-position(@nxtgame)!important;
+}
+.self .thumbnail[href*="asia_arena"]{
+	.sprite-position(@asia-arena)!important;
 }
