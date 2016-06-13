@@ -4,20 +4,31 @@
 
 /* Users */
 .flair {
-  background: url(%%user-flairs%%) no-repeat top left;
-  display: inline-block;
-  border: 0;
-  padding: 0;
-  &-yellow {
-    background-position: 0 -120px;
-    width: 15px;
-    height: 14px;
-  }
-  &-red {
-    background-position: 0 -75px;
-    width: 15px;
-    height: 15px;
-  }
+	background: transparent;
+	border: 0;
+	
+	&:before {
+		content: "";
+		background: url(%%user-flairs%%) transparent;
+		display: inline-block;
+		border: 0;
+		padding: 0;
+		width: 21px;
+		height: 21px;
+		vertical-align: middle;
+	}
+	&-dev:before {
+		background-position: -5px -6px;
+	}
+	&-staff:before {
+		background-position: -5px -37px;
+	}
+	&-donator:before {
+		background-position: -5px -68px;
+	}
+	&-updater:before {
+		background-position: -5px -98px;
+	}
 }
 
 /* Links */
