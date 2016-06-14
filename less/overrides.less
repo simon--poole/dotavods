@@ -1,0 +1,30 @@
+#header-bottom-left {
+  background-position: left top;
+}
+/* Tournament icons in header */
+@header-icons-height: -130px;
+.side {
+  // In order, header icons for the following tourneys, left to right
+  a[href*="#ti5"],
+  {
+    .hide-text;
+    background: url(%%header-events%%) no-repeat top left;
+    height: 126px;
+    display: block;
+    position: absolute;
+    top: 19px;
+    z-index: 9999;
+  overflow: hidden;
+  }
+  // Icon 1
+  a[href*="#ti5"] {
+    right: 15px;
+    width: 300px;
+    .bg-pos;
+  transform: scale(0.9, 0.9);
+    &:hover {
+      .bg-pos(0, @header-icons-height);
+    }
+  }
+  
+}

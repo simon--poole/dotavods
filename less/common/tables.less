@@ -1,22 +1,3 @@
-/* Hides domain, leave contributor button & RES nav annotations */
-#viewImagesButton,
-.domain,
-.side .leavecontributor-button,
-table .keyNavAnnotation,
-#siteTable .keyNavAnnotation,
-a[href^="#"] + .keyNavAnnotation {
-  display: none;
-}
-.link.last-clicked {
-  overflow: hidden;
-}
-
-/* Timestamps */
-.edited-timestamp::after {
-  content:" (" attr(title) ")";
-  font-size: 90%;
-}
-
 /* tables */
 .md { 
   table {
@@ -59,14 +40,4 @@ a[href^="#"] + .keyNavAnnotation {
     background-color: #444;
     color: whitesmoke;
   }
-}
-.wiki-page {
-    .wiki-page-content {
-        .wiki.md {
-            max-width: none!important;
-        }
-    }
-}
-.entry.RES-keyNav-activeElement {
-	background: inherit!important;
 }

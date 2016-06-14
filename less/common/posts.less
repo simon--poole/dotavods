@@ -1,8 +1,26 @@
+/* Hover to view comments */
+.md {
+  h5 + p, h5 + ul, h5 + ol {
+    max-height: 0px;
+    overflow: hidden;
+    -webkit-transition: max-height 0.4s cubic-bezier(0, 1.05, 0, 1);
+    -moz-transition: max-height 0.4s cubic-bezier(0, 1.05, 0, 1);
+    transition: max-height 0.4s cubic-bezier(0, 1.05, 0, 1);
+  }
+  h5:hover + p, h5:hover + ul, h5:hover + ol,
+  h5 + p:hover, h5 + ul:hover, h5 + ol:hover {
+    max-height: 1500px;
+    -webkit-transition: max-height 0.8s;
+    -moz-transition: max-height 0.8s;
+    transition: max-height 0.8s;
+  }
+}
+
 /* Visited links color change */
 .entry {
   a:visited { 
     color: #551a8b;
-    &[href*="dota.eventvods.com"] {
+    &[href*=".eventvods.com"] {
       color: #0079d3!important;
     }
   }
@@ -10,7 +28,7 @@
 .md,
 .res-nightmode .md,
 html:lang(dd) .md {
-  max-width: 66em!important;
+  max-width: 74em!important;
 }
 
 /* Red text in posts & disabled stylesheet warning */
