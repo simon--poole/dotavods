@@ -18,13 +18,27 @@
 
 /* Visited links color change */
 .entry {
-  a:visited { 
+  a:visited {
     color: #551a8b;
     &[href*=".eventvods.com"] {
       color: #0079d3!important;
     }
   }
 }
+.res-nightmode {
+	.entry .md table {
+		a {
+			color: #1c75cd;
+		}
+		a:hover, a:visited {
+			color: #551a8b;
+		}
+		a:visited[href*=".eventvods.com"] {
+			color: #1c75cd!important;
+		}
+	}
+}
+
 .md,
 .res-nightmode .md,
 html:lang(dd) .md {
@@ -48,7 +62,7 @@ html:lang(dd) .md {
 /* Hides video expandos in posts and wiki */
 .usertext-body .md,
 .wiki-page-content .md {
-  .RESdupeimg, .expando-button.video, 
+  .RESdupeimg, .expando-button.video,
   .expando-button.video.collapsed,
   .expando-button.video.expanded {
     display: none!important;
@@ -56,7 +70,7 @@ html:lang(dd) .md {
 }
 
 /* Hides downvote arrow on posts only; still accessible on comments*/
-.arrow.down { 
+.arrow.down {
   visibility: hidden;
   display: none;
 }
