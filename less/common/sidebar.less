@@ -29,11 +29,14 @@
             }
         }
         ul:nth-of-type(2) {
-            li:not(: first-of-type) {
+            li:not(:first-of-type) {
                 text-align: center;
-                display: block;
+                display: flex!important;
+                justify-content: center;
                 & a {
                     display: inline-block;
+                    align-self: center;
+                    padding: 0 5px;
                 }
                 & a[href="#spoiler"], & a[href="#team"] {
                     min-width: 45px;
@@ -41,16 +44,19 @@
                     padding: 0 3px;
                     font-weight: bolder;
                     cursor: default!important;
+                    flex-basis: 100px;
+                    flex-grow: 1;
                 }
                 & a[href="#team"] {
                     color: black;
+                    padding: 0px 20px 0px 20px;
                 }
                 & a[href$="#title"] {
                     width: 100%;
                     text-align: left;
                     font-weight: bolder;
                 }
-                & a[href$="#countdown"] {
+                & a[href$="#countdown"], strong {
                     width: 100%;
                     text-align: left;
                     color: black;
