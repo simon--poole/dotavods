@@ -66,15 +66,20 @@
 /* Moves userbar down below header image */
 
 #header-bottom-right {
-	bottom: -35px;
+	top:144px!important;
 	line-height: 26px;
 	padding-left: 15px;
-	border-top: 1px solid @highlight;
+	border-top: 2px solid @highlight;
 	background: #1c1c1c;
-	border-radius: 0;
+	border-radius: 0!important;
 	z-index: 20;
 	a {
 		color: #fff;
+	}
+	#userbarToggle {
+		background: transparent;
+		border: 0;
+		line-height: 34px;
 	}
 }
 .user {

@@ -20,18 +20,22 @@
 @ti5: -0px -1330px 100px 70px;
 @wca15: -0px -1400px 100px 70px;
 @weplay: -0px -1470px 100px 70px;
+
 .sprite-width(@sprite) {
   width: extract(@sprite, 3);
 }
+
 .sprite-height(@sprite) {
   height: extract(@sprite, 4);
 }
+
 .sprite-position(@sprite) {
   @sprite-offset-x: extract(@sprite, 1);
   @sprite-offset-y: extract(@sprite, 2);
   background-position: @sprite-offset-x @sprite-offset-y;
 }
-.sprite(@sprite, @display: block) {
+
+.sprite(@sprite, @display:block) {
   .sprite-position(@sprite);
   background-repeat: no-repeat;
   overflow: hidden;
@@ -39,6 +43,7 @@
   .sprite-width(@sprite);
   .sprite-height(@sprite);
 }
+
 .icon {
-  background-image: url(../images/thumbnails.PNG);
+  background-image: url('../images/thumbnails.PNG');
 }
